@@ -1,0 +1,13 @@
+﻿@page "/books/add"
+
+<h1>Add Book</h1>
+<button class="btn btn-primary" onclick="@IncrementCount">Click me</button>
+
+@functions {
+	int currentCount = 0;
+
+	void IncrementCount()
+	{
+		currentCount++;
+	}
+}
