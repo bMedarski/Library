@@ -1,13 +1,32 @@
 ﻿@page "/books/add"
+@inject HttpClient Http
+@using Library.Web.Shared
 
 <h1>Add Book</h1>
-<button class="btn btn-primary" onclick="@IncrementCount">Click me</button>
+@if (_book == null)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<p><em>@_book</em></p>
+}
 
 @functions {
-	int currentCount = 0;
+int _currentCount = 0;
 
-	void IncrementCount()
+void IncrementCount()
+{
+	_currentCount++;
+}
+}
+@functions {
+	Book _book;
+
+
+	protected override async Task OnInitAsync()
 	{
-		currentCount++;
+
+		_book = await Http.GetJsonAsync<Book>("Books/Index");
 	}
 }
