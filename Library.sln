@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Web.Client", "Libra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Web.Shared", "Library.Web.Shared\Library.Web.Shared.csproj", "{B866103A-5507-4EF0-AA4F-5502729E68BC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{8448F224-D155-4108-99DF-C2A071D639B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D52ED22A-5273-4E15-978B-D1A1CB8BDECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Data", "Library.Data\Library.Data.csproj", "{7AA82E01-65C0-49C9-8273-4AB287ED6A17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +33,19 @@ Global
 		{B866103A-5507-4EF0-AA4F-5502729E68BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B866103A-5507-4EF0-AA4F-5502729E68BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B866103A-5507-4EF0-AA4F-5502729E68BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA82E01-65C0-49C9-8273-4AB287ED6A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA82E01-65C0-49C9-8273-4AB287ED6A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA82E01-65C0-49C9-8273-4AB287ED6A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA82E01-65C0-49C9-8273-4AB287ED6A17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4D43863-E6BE-4BC0-B618-A9A9B18EA350} = {8448F224-D155-4108-99DF-C2A071D639B9}
+		{BB41FC15-D08C-4A02-8F54-0D5F3D2FB056} = {8448F224-D155-4108-99DF-C2A071D639B9}
+		{B866103A-5507-4EF0-AA4F-5502729E68BC} = {8448F224-D155-4108-99DF-C2A071D639B9}
+		{7AA82E01-65C0-49C9-8273-4AB287ED6A17} = {D52ED22A-5273-4E15-978B-D1A1CB8BDECB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44E1FE8E-ADE7-4A42-8800-F682DE940F8E}
