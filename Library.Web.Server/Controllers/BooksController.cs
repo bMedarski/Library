@@ -19,7 +19,7 @@
 
 			// Now you are able to call some Goodreads endpoints that don't need the OAuth credentials. For example:
 			// Get a book by specified id.
-			var book = await client.Books.GetByBookId(15979976);
+			var book = await client.Books.GetByBookId(817357);
 
 
 			var searchTerm = "Dragon";
