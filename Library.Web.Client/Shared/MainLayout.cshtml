@@ -1,15 +1,9 @@
 ﻿@inherits BlazorLayoutComponent
 
-<div class="sidebar">
-    <NavMenu />
-</div>
-
+<NavMenu />
 <div class="main">
-    <div class="top-row px-4">
+	<div class="container main-section p-4">
+		@Body
+	</div>
 
-    </div>
-
-    <div class="content px-4">
-        @Body
-    </div>
 </div>

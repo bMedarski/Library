@@ -1,40 +1,41 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Library.Web</a>
-    <button class="navbar-toggler" onclick=@ToggleNavMenu>
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
+﻿<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<div class="container">
 
-<div class=@(collapseNavMenu ? "collapse" : null) onclick=@ToggleNavMenu>
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match=NavLinkMatch.All>
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-	    <li class="nav-item px-3">
-		    <NavLink class="nav-link" href="counter">
-			    <span class="oi oi-plus" aria-hidden="true"></span> Counter
-		    </NavLink>
-	    </li>
-	    <li class="nav-item px-3">
-		    <NavLink class="nav-link" href="books/add">
-			    <span class="oi oi-plus" aria-hidden="true"></span> Add Book
-		    </NavLink>
-	    </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </li>
-    </ul>
-</div>
-
+		<a class="navbar-brand" href="">My Library</a>
+		<button class="navbar-toggler" onclick=@ToggleNavMenu>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class=@(collapseNavMenu ? "collapse navbar-collapse" : null) onclick=@ToggleNavMenu>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item px-3">
+					<NavLink class="nav-link" href="" Match=NavLinkMatch.All>
+						<span class="oi oi-home" aria-hidden="true"></span> Home
+					</NavLink>
+				</li>
+				<li class="nav-item px-3">
+					<NavLink class="nav-link" href="counter">
+						<span class="oi oi-plus" aria-hidden="true"></span> Counter
+					</NavLink>
+				</li>
+				<li class="nav-item px-3">
+					<NavLink class="nav-link" href="books/add">
+						<span class="oi oi-plus" aria-hidden="true"></span> Add Book
+					</NavLink>
+				</li>
+				<li class="nav-item px-3">
+					<NavLink class="nav-link" href="fetchdata">
+						<span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+					</NavLink>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
 @functions {
-    bool collapseNavMenu = true;
+bool collapseNavMenu = true;
 
-    void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+void ToggleNavMenu()
+{
+	collapseNavMenu = !collapseNavMenu;
+}
 }
