@@ -9,13 +9,13 @@
 			this.Authors = new HashSet<Author>();
 		}
 		public int Id { get; set; }
-		public int GoodReadsId { get; set; }
+		public long GoodReadsId { get; set; }
 		public string Title { get; set; }
 		public string Description { get; set; }
 		public string ImageUrl { get; set; }
 		public string SmallImageUrl { get; set; }
 		public string Url { get; set; }
-		public int Isbn { get; set; }
+		public string Isbn { get; set; }
 		public ICollection<Author> Authors { get; set; }
 		public string Language { get; set; }
 		public int Pages { get; set; }

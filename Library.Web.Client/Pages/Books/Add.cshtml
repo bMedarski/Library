@@ -1,32 +1,61 @@
 ﻿@page "/books/add"
-@inject HttpClient Http
+@inject HttpClient HttpClient
+@using System.Net
 @using Library.Web.Shared
+@using Microsoft.AspNetCore.Blazor.Services
+@inject IUriHelper UriHelper
 
-<h1>Add Book</h1>
+<h1 class="text-center">Add Book</h1>
+<div> GoodReads book link <input type="text" bind="@this.goodReadsId"/><input type="submit" value="Check book" onclick="@CheckBook"/></div>
 @if (_book == null)
 {
 	<p><em>Loading...</em></p>
 }
 else
 {
-	<p><em>@_book</em></p>
+	<p class="book">@_book.Title</p>
 }
 
-@functions {
-int _currentCount = 0;
-
-void IncrementCount()
-{
-	_currentCount++;
-}
-}
 @functions {
 	Book _book;
+	string goodReadsId;
 
+	void SomeMethod()
+	{
+		Console.WriteLine("ole");
+	}
+	async Task CheckBook()
+	{
+		Console.WriteLine();
+		var result = await HttpClient.PostAsync(
+			"books/GetBookFromGoodReads",
+			new FormUrlEncodedContent(
+			new List<KeyValuePair<string, string>>
+			{
+				new KeyValuePair<string, string>("link", goodReadsId),
+			}));
+		Console.WriteLine(result.Content);
+	}
 
 	protected override async Task OnInitAsync()
 	{
-
-		_book = await Http.GetJsonAsync<Book>("Books/Index");
+		Console.WriteLine("ole");
+		//_book = await WebRequestMethods.Http.GetJsonAsync<Book>("Books/Index");
 	}
+	//ApiResponse<UserRegisterResponseModel> response;
+
+	//readonly UserRegisterRequestModel userModel = new UserRegisterRequestModel();
+
+	//async Task Submit()
+	//{
+	//	this.response = await this.ApiClient.UserRegister(this.userModel);
+	//	if (this.response.IsOk)
+	//	{
+	//		this.UriHelper.NavigateTo("account/login");
+	//	}
+	//	else
+	//	{
+	//		this.StateHasChanged();
+	//	}
+	//}
 }

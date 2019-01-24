@@ -1,3 +1,13 @@
 ﻿body {
 	background-image: url(/images/bg_1.jpg);
 }
+.main {
+	color: black;
+}
+.main-section {
+	background-color: white;
+	color: black;
+}
+.book {
+	font-size: 20px;
+}
